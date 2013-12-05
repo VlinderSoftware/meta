@@ -8,7 +8,7 @@
  * and related software, contact us at <support@vlinder.ca>
  */
 #include <cassert>
-#include "meta/typelist.hpp"
+#include "../typelist.hpp"
 #include "../constants.hpp"
 
 using namespace Vlinder::Meta;

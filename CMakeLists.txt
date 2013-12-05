@@ -5,7 +5,7 @@ enable_testing()
 include(Dart)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-#include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${PROJECT_SOURCE_DIR})
 
 foreach (test
 	meta01
@@ -17,7 +17,6 @@ foreach (test
 	isnone01
 	)
 	add_executable(test_${test} tests/${test}.cpp)
-#	target_link_libraries(test_${test} libupool2)
 	add_test(test_${test} ${EXECUTABLE_OUTPUT_PATH}/test_${test})
 endforeach(test)
 

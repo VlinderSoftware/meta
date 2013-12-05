@@ -10,7 +10,7 @@
 #ifndef upool2_constants_hpp
 #define upool2_constants_hpp
 
-#include "meta/typelist.hpp"
+#include "typelist.hpp"
 
 namespace Vlinder { namespace Meta {
 	template < unsigned int v__ >
