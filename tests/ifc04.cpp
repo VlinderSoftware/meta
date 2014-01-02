@@ -29,20 +29,20 @@ struct T
 {
 };
 
-typedef TypeList< P, Q, R, S > Types;
+typedef MakeTypeList< P, Q, R, S >::type Types;
 
 template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
 struct F_
 {
 	typedef typename IfC<
-		Predicate< typename Haystack::type, Needle >::value,
+		Predicate< typename Haystack::head, Needle >::value,
 		Haystack,
 		None
-	>::type type;
+	>::type::head type;
 };
 
 int main()
 {
-	bool equals(Equals< typename F_< typename Types::head, P, Equals >::type::type, P >::value);
+	bool equals(Equals< typename F_< typename Types, P, Equals >::type, P >::value);
 	assert(equals);
 }

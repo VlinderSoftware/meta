@@ -14,7 +14,7 @@ foreach (test
 	first_equals01
 	if01	if02	if03	if04
 	ifc01	ifc02	ifc03	ifc04
-	isnone01
+	kpm01
 	)
 	add_executable(test_${test} tests/${test}.cpp)
 	add_test(test_${test} ${EXECUTABLE_OUTPUT_PATH}/test_${test})

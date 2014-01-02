@@ -29,14 +29,14 @@ struct T
 {
 };
 
-typedef TypeList< Pair< P, Q >, Pair< R, S > > Types;
+typedef MakeTypeList< Pair< P, Q >, Pair< R, S > >::type Types;
 
 int main()
 {
-	bool is_none(IsNone< typename Find< Types, Pair< P, Q >, Equals >::type::type >::value);
+	bool is_none(IsNone< typename Find< Types, Pair< P, Q >, Equals >::type::head >::value);
 	assert(!is_none);
-	bool equals(Equals< typename Find< Types, Pair< P, Q >, Equals >::type::type, Pair< P, Q > >::value);
+	bool equals(Equals< typename Find< Types, Pair< P, Q >, Equals >::type::head, Pair< P, Q > >::value);
 	assert(equals);
-	bool first_equals(FirstEquals< typename Find< Types, Pair< P, Q >, Equals >::type::type, P >::value);
+	bool first_equals(FirstEquals< typename Find< Types, Pair< P, Q >, Equals >::type::head, P >::value);
 	assert(first_equals);
 }

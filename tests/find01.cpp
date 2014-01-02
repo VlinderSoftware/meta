@@ -29,11 +29,11 @@ struct T
 {
 };
 
-typedef TypeList< P, Q, R, S > Types;
+typedef MakeTypeList< P, Q, R, S >::type Types;
 
 
 int main()
 {
-	bool equals(IsNone< typename Find< Types, T, Equals >::type::type >::value);
+	bool equals(IsNone< typename Find< Types, T, Equals >::type >::value);
 	assert(equals);
 }

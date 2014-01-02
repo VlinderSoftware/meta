@@ -15,7 +15,7 @@ namespace Vlinder { namespace Meta {
 	template < typename Types >
 	struct ForEach;
 	template < >
-	struct ForEach< TLNode< None, TypeList< None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None > > >
+	struct ForEach< None >
 	{
 		template < typename Functor >
 		static void perform(Functor functor)
@@ -29,14 +29,14 @@ namespace Vlinder { namespace Meta {
 		template < typename Functor >
 		static void perform(Functor functor)
 		{
-			functor(Identity< typename Types::type >());
-			ForEach< typename Types::next >::perform(functor);
+			functor(Identity< typename Types::head >());
+			ForEach< typename Types::tail >::perform(functor);
 		}
 	};
 	template < typename Types, typename Functor >
 	void forEach(Functor functor)
 	{
-		ForEach< typename Types::head >::perform(functor);
+		ForEach< typename Types >::perform(functor);
 	}
 }}
 

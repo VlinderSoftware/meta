@@ -26,7 +26,7 @@ struct S
 {
 };
 
-typedef TypeList< P, Q, R, S > Types;
+typedef MakeTypeList< P, Q, R, S >::type Types;
 
 int main()
 {
@@ -39,8 +39,9 @@ int main()
 	assert(value == 2);
 	value = IfC< Equals< P, typename At< Types, 3 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
 	assert(value == 2);
-	value = IfC< Equals< P, typename At< Types, 4 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
-	assert(value == 2);
+	// doesn't, and shouldn't, compile
+	//value = IfC< Equals< P, typename At< Types, 4 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
+	//assert(value == 2);
 
 	value = IfC< Equals< Q, typename At< Types, 0 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
 	assert(value == 2);
@@ -50,8 +51,8 @@ int main()
 	assert(value == 2);
 	value = IfC< Equals< Q, typename At< Types, 3 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
 	assert(value == 2);
-	value = IfC< Equals< Q, typename At< Types, 4 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
-	assert(value == 2);
+	//value = IfC< Equals< Q, typename At< Types, 4 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
+	//assert(value == 2);
 
 	value = IfC< Equals< R, typename At< Types, 0 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
 	assert(value == 2);
@@ -61,8 +62,8 @@ int main()
 	assert(value == 1);
 	value = IfC< Equals< R, typename At< Types, 3 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
 	assert(value == 2);
-	value = IfC< Equals< R, typename At< Types, 4 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
-	assert(value == 2);
+	//value = IfC< Equals< R, typename At< Types, 4 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
+	//assert(value == 2);
 
 	value = IfC< Equals< S, typename At< Types, 0 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
 	assert(value == 2);
@@ -72,7 +73,7 @@ int main()
 	assert(value == 2);
 	value = IfC< Equals< S, typename At< Types, 3 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
 	assert(value == 1);
-	value = IfC< Equals< S, typename At< Types, 4 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
-	assert(value == 2);
+	//value = IfC< Equals< S, typename At< Types, 4 >::type >::value, Constant< 1 >, Constant< 2 > >::type::value;
+	//assert(value == 2);
 
 }

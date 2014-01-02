@@ -1,9 +1,9 @@
-/* Meta - general-purpose meta-programming toolkit library
+/* meta: meta-programming library for C++
  * Copyright (C) $$__YEAR__$$  Vlinder Software
  *
  * $$__LICENSE__$$
  *
- * To obtain a different license, or for more information about this
+ * To obtain a different license, or for more information about this 
  * and related software, contact us at <support@vlinder.ca>
  */
 #ifndef vlinder_meta_cat_hpp

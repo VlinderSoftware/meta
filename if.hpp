@@ -12,15 +12,30 @@
 #include "none.hpp"
 
 namespace Vlinder { namespace Meta {
-	template < bool value, typename First, typename Second >
+	template < bool value >
+	struct IfC_
+	{
+		template < typename First, typename Second >
+		struct result
+		{
+			typedef First type;
+		};
+	};
+	template <  >
+	struct IfC_< false >
+	{
+		template < typename First, typename Second >
+		struct result
+		{
+			typedef Second type;
+		};
+	};
+
+
+	template < int value, typename First, typename Second >
 	struct IfC
 	{
-		typedef First type;
-	};
-	template < typename First, typename Second >
-	struct IfC< false, First, Second >
-	{
-		typedef Second type;
+		typedef typename IfC_< value != 0 >::result< First, Second >::type type;
 	};
 	template < typename Pred, typename First, typename Second >
 	struct If : IfC< Pred::value, First, Second >
