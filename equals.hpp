@@ -13,11 +13,13 @@ namespace Vlinder { namespace Meta {
 	template < typename LHS, typename RHS >
 	struct Equals
 	{
+		typedef Equals< LHS, RHS > type;
 		enum { value = 0 };
 	};
 	template < typename LHS >
 	struct Equals< LHS, LHS >
 	{
+		typedef Equals< LHS, LHS > type;
 		enum { value = 1 };
 	};
 }}
