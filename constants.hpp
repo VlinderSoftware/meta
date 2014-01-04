@@ -26,6 +26,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__ >
 	struct Constants2
@@ -36,6 +37,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__ >
 	struct Constants3
@@ -47,6 +49,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__ >
 	struct Constants4
@@ -59,6 +62,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__ >
 	struct Constants5
@@ -72,6 +76,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__ >
 	struct Constants6
@@ -86,6 +91,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__ >
 	struct Constants7
@@ -101,6 +107,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__, unsigned int v8__ >
 	struct Constants8
@@ -117,6 +124,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__, unsigned int v8__, unsigned int v9__ >
 	struct Constants9
@@ -134,6 +142,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__, unsigned int v8__, unsigned int v9__, unsigned int v10__ >
 	struct Constants10
@@ -152,6 +161,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__, unsigned int v8__, unsigned int v9__, unsigned int v10__, unsigned int v11__ >
 	struct Constants11
@@ -171,6 +181,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__, unsigned int v8__, unsigned int v9__, unsigned int v10__, unsigned int v11__, unsigned int v12__ >
 	struct Constants12
@@ -191,6 +202,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__, unsigned int v8__, unsigned int v9__, unsigned int v10__, unsigned int v11__, unsigned int v12__, unsigned int v13__ >
 	struct Constants13
@@ -212,6 +224,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__, unsigned int v8__, unsigned int v9__, unsigned int v10__, unsigned int v11__, unsigned int v12__, unsigned int v13__, unsigned int v14__ >
 	struct Constants14
@@ -234,6 +247,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__, unsigned int v8__, unsigned int v9__, unsigned int v10__, unsigned int v11__, unsigned int v12__, unsigned int v13__, unsigned int v14__, unsigned int v15__ >
 	struct Constants15
@@ -257,6 +271,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 	template < unsigned int v1__, unsigned int v2__, unsigned int v3__, unsigned int v4__, unsigned int v5__, unsigned int v6__, unsigned int v7__, unsigned int v8__, unsigned int v9__, unsigned int v10__, unsigned int v11__, unsigned int v12__, unsigned int v13__, unsigned int v14__, unsigned int v15__, unsigned int v16__ >
 	struct Constants16
@@ -281,6 +296,7 @@ namespace Vlinder { namespace Meta {
 		>::type list;
 		typedef list type;
 		typedef typename list::head head;
+		typedef typename list::tail tail;
 	};
 
 	template < typename C >
