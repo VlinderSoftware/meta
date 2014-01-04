@@ -185,24 +185,20 @@ namespace Vlinder { namespace Meta {
 	{
 		typedef TypeList< typename F< typename TL1::head >::type, typename Transform< typename TL1::tail, F >::type > type;
 	};
-	template < typename P, typename T >
-	struct FirstEquals
-	{
-		enum { value = Equals< typename P::first::type, T >::value };
-	};
-	template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
+	template < typename Haystack, typename Needle, template < typename, typename > class Predicate, class Enable = void >
 	struct Find_
 	{
-		typedef typename If<
-			Predicate< typename Haystack::head, Needle >,
-			Haystack,
-			typename Find_< typename Haystack::tail, Needle, Predicate >::type
-		>::type type;
+		typedef typename Find_< typename Haystack::tail, Needle, Predicate >::type type;
 	};
-	template < typename Needle, template < typename, typename > class Predicate >
-	struct Find_< None, Needle, Predicate >
+	template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
+	struct Find_< Haystack, Needle, Predicate, typename EnableIf< IsNone< Haystack > >::type >
 	{
 		typedef None type;
+	};
+	template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
+	struct Find_< Haystack, Needle, Predicate, typename EnableIf< typename Predicate< typename Haystack::head, Needle >::type >::type >
+	{
+		typedef typename Haystack::head type;
 	};
 	template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
 	struct Find
