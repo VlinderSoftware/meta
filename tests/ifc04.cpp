@@ -37,7 +37,7 @@ struct F_
 	typedef typename IfC<
 		Predicate< typename Haystack::head, Needle >::value,
 		Haystack,
-		None
+		Nil
 	>::type::head type;
 };
 

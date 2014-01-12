@@ -41,9 +41,9 @@ struct F_
 	>::type type;
 };
 template < typename Needle, template < typename, typename > class Predicate >
-struct F_< None, Needle, Predicate >
+struct F_< Nil, Needle, Predicate >
 {
-	typedef None type;
+	typedef Nil type;
 };
 
 int main()

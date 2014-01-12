@@ -41,13 +41,13 @@ struct F_
 	>::type type;
 };
 template < typename Needle, template < typename, typename > class Predicate >
-struct F_< None, Needle, Predicate >
+struct F_< Nil, Needle, Predicate >
 {
-	typedef None type;
+	typedef Nil type;
 };
 
 int main()
 {
-	bool equals(IsNone< typename F_< typename Types, T, Equals >::type >::value);
+	bool equals(IsNil< typename F_< typename Types, T, Equals >::type >::value);
 	assert(equals);
 }

@@ -9,7 +9,7 @@
 #ifndef vlinder_meta_typelist_hpp
 #define vlinder_meta_typelist_hpp
 
-#include "none.hpp"
+#include "nil.hpp"
 #include "if.hpp"
 #include "not.hpp"
 #include "enableif.hpp"
@@ -19,10 +19,10 @@ namespace Vlinder { namespace Meta {
 	template < typename T, typename Tail >
 	struct TypeList;
 	template < typename T >
-	struct TypeList< T, None >
+	struct TypeList< T, Nil >
 	{
 		typedef T head;
-		typedef None tail;
+		typedef Nil tail;
 	};
 	template < typename T, typename Tail >
 	struct TypeList
@@ -32,25 +32,25 @@ namespace Vlinder { namespace Meta {
 	};
 
 	template <
-		  typename  T1       , typename  T2 = None, typename  T3 = None, typename  T4 = None
-		, typename  T5 = None, typename  T6 = None, typename  T7 = None, typename  T8 = None
-		, typename  T9 = None, typename T10 = None, typename T11 = None, typename T12 = None
-		, typename T13 = None, typename T14 = None, typename T15 = None, typename T16 = None
-		, typename T17 = None, typename T18 = None, typename T19 = None, typename T20 = None
-		, typename T21 = None, typename T22 = None, typename T23 = None, typename T24 = None
-		, typename T25 = None, typename T26 = None, typename T27 = None, typename T28 = None
-		, typename T29 = None, typename T30 = None, typename T31 = None, typename T32 = None
+		  typename  T1       , typename  T2 = Nil, typename  T3 = Nil, typename  T4 = Nil
+		, typename  T5 = Nil, typename  T6 = Nil, typename  T7 = Nil, typename  T8 = Nil
+		, typename  T9 = Nil, typename T10 = Nil, typename T11 = Nil, typename T12 = Nil
+		, typename T13 = Nil, typename T14 = Nil, typename T15 = Nil, typename T16 = Nil
+		, typename T17 = Nil, typename T18 = Nil, typename T19 = Nil, typename T20 = Nil
+		, typename T21 = Nil, typename T22 = Nil, typename T23 = Nil, typename T24 = Nil
+		, typename T25 = Nil, typename T26 = Nil, typename T27 = Nil, typename T28 = Nil
+		, typename T29 = Nil, typename T30 = Nil, typename T31 = Nil, typename T32 = Nil
 	>
 	struct MakeTypeList;
 	template < typename T >
 	struct MakeTypeList<
-		     T, None, None, None, None, None, None, None
-		, None, None, None, None, None, None, None, None
-		, None, None, None, None, None, None, None, None
-		, None, None, None, None, None, None, None, None
+		     T, Nil, Nil, Nil, Nil, Nil, Nil, Nil
+		, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil
+		, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil
+		, Nil, Nil, Nil, Nil, Nil, Nil, Nil, Nil
 	>
 	{
-		typedef TypeList< T, None > type;
+		typedef TypeList< T, Nil > type;
 	};
 	template <
 		  typename  T1, typename  T2, typename  T3, typename  T4
@@ -75,7 +75,7 @@ namespace Vlinder { namespace Meta {
 	template < typename TL >
 	struct Length;
 	template <>
-	struct Length< None >
+	struct Length< Nil >
 	{
 		enum { value = 0 };
 	};
@@ -88,12 +88,12 @@ namespace Vlinder { namespace Meta {
 	template < typename TL, unsigned int index__, class Enable = void >
 	struct At;
 	template < typename TL >
-	struct At< TL, 0, typename EnableIf< Not< IsNone< TL > > >::type >
+	struct At< TL, 0, typename EnableIf< Not< IsNil< TL > > >::type >
 	{
 		typedef typename TL::head type;
 	};
 	template < typename TL, unsigned int index__ >
-	struct At< TL, index__, typename EnableIf< Not< IsNone< TL > > >::type >
+	struct At< TL, index__, typename EnableIf< Not< IsNil< TL > > >::type >
 	{
 		typedef typename At< typename TL::tail, index__ - 1 >::type type;
 	};
@@ -107,17 +107,17 @@ namespace Vlinder { namespace Meta {
 	template < typename TL >
 	struct Splice< TL, 0, 0 >
 	{
-		typedef None type;
+		typedef Nil type;
 	};
 	template <>
-	struct Splice< None, 0, 0 >
+	struct Splice< Nil, 0, 0 >
 	{
-		typedef None type;
+		typedef Nil type;
 	};
 	template < unsigned int end__ >
-	struct Splice< None, 0, end__ >
+	struct Splice< Nil, 0, end__ >
 	{
-		typedef None type;
+		typedef Nil type;
 	};
 	template < typename TL, unsigned int end__ >
 	struct Splice< TL, 0, end__ >
@@ -133,7 +133,7 @@ namespace Vlinder { namespace Meta {
 	template < template < class, class > class F, typename T,typename TL >
 	struct FoldR;
 	template < template < class, class > class F, typename T >
-	struct FoldR< F, T, None >
+	struct FoldR< F, T, Nil >
 	{
 		typedef T type;
 	};
@@ -176,9 +176,9 @@ namespace Vlinder { namespace Meta {
 	template < typename TL1, template < class > class F >
 	struct Transform;
 	template < template < class > class F >
-	struct Transform< None, F >
+	struct Transform< Nil, F >
 	{
-		typedef None type;
+		typedef Nil type;
 	};
 	template < typename TL1, template < class > class F >
 	struct Transform
@@ -200,9 +200,9 @@ namespace Vlinder { namespace Meta {
 		>::type type;
 	};
 	template < typename Needle, template < typename, typename > class Predicate >
-	struct Find_< None, Needle, Predicate >
+	struct Find_< Nil, Needle, Predicate >
 	{
-		typedef None type;
+		typedef Nil type;
 	};
 	template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
 	struct Find

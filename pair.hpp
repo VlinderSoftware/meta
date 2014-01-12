@@ -9,7 +9,7 @@
 #ifndef vlinder_meta_pair_hpp
 #define vlinder_meta_pair_hpp
 
-#include "none.hpp"
+#include "nil.hpp"
 #include "identity.hpp"
 
 namespace Vlinder { namespace Meta {
@@ -25,9 +25,9 @@ namespace Vlinder { namespace Meta {
 		typedef typename P::first type;
 	};
 	template <>
-	struct GetFirst< None >
+	struct GetFirst< Nil >
 	{
-		typedef None type;
+		typedef Nil type;
 	};
 	template < typename P >
 	struct GetSecond
@@ -35,9 +35,9 @@ namespace Vlinder { namespace Meta {
 		typedef typename P::second type;
 	};
 	template < >
-	struct GetSecond< None >
+	struct GetSecond< Nil >
 	{
-		typedef None type;
+		typedef Nil type;
 	};
 }}
 

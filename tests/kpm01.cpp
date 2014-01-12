@@ -42,7 +42,7 @@ int main()
 {
 	typedef MakeTypeList< C< 'p' >, C< 'a' >, C< 'r' >, C< 't' >, C< 'i' >, C< 'c' >, C< 'i' >, C< 'p' >, C< 'a' >, C< 't' >, C< 'e' >, C< ' ' >, C< 'i' >, C< 'n' >, C< ' ' >, C< 'p' >, C< 'a' >, C< 'r' >, C< 'a' >, C< 'c' >, C< 'h' >, C< 'u' >, C< 't' >, C< 'e' > >::type Phrase;
 	assert(Length< Phrase >::value == 24);
-	int c(IfC< (25 >= Length< Phrase >::value), typename At< Phrase, 23 >::type, Identity< None > >::type::value);
+	int c(IfC< (25 >= Length< Phrase >::value), typename At< Phrase, 23 >::type, Identity< Nil > >::type::value);
 	assert(c == 'e');
 	typedef KPMTable< Phrase >::type T;
 	int t[Length< T >::value];

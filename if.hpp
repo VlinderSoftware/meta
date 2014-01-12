@@ -9,7 +9,7 @@
 #ifndef vlinder_meta_if_hpp
 #define vlinder_meta_if_hpp
 
-#include "none.hpp"
+#include "nil.hpp"
 
 namespace Vlinder { namespace Meta {
 	template < bool value >

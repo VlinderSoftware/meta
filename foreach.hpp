@@ -15,7 +15,7 @@ namespace Vlinder { namespace Meta {
 	template < typename Types >
 	struct ForEach;
 	template < >
-	struct ForEach< None >
+	struct ForEach< Nil >
 	{
 		template < typename Functor >
 		static void perform(Functor functor)

@@ -34,6 +34,6 @@ typedef MakeTypeList< P, Q, R, S >::type Types;
 
 int main()
 {
-	bool equals(IsNone< typename Find< Types, T, Equals >::type >::value);
+	bool equals(IsNil< typename Find< Types, T, Equals >::type >::value);
 	assert(equals);
 }

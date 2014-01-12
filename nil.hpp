@@ -6,17 +6,17 @@
  * To obtain a different license, or for more information about this 
  * and related software, contact us at <support@vlinder.ca>
  */
-#ifndef vlinder_meta_none_hpp
-#define vlinder_meta_none_hpp
+#ifndef vlinder_meta_nil_hpp
+#define vlinder_meta_nil_hpp
 
 #include "equals.hpp"
 
 namespace Vlinder { namespace Meta {
-	struct None
+	struct Nil
 	{
 	};
 	template < typename T >
-	struct IsNone : Equals< None, T >
+	struct IsNil : Equals< Nil, T >
 	{
 	};
 }}
