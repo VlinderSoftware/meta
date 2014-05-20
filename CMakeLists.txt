@@ -10,6 +10,8 @@ include_directories(${PROJECT_SOURCE_DIR})
 foreach (test
 	meta01
 	equals01	equals02	equals03
+	isconvertible01 isconvertible02 isconvertible03
+	isconvertible04 isconvertible05 isconvertible06
 	find01		find02
 	first_equals01
 	if01	if02	if03	if04
