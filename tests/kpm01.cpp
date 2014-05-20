@@ -9,6 +9,7 @@
  */
 #include <cassert>
 #include <iostream>
+#include <cstring>
 #include "../kpm.hpp"
 #include "../gettype.hpp"
 #include "../if.hpp"

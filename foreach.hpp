@@ -36,7 +36,7 @@ namespace Vlinder { namespace Meta {
 	template < typename Types, typename Functor >
 	void forEach(Functor functor)
 	{
-		ForEach< typename Types >::perform(functor);
+		ForEach< Types >::perform(functor);
 	}
 }}
 

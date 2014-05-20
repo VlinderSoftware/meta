@@ -48,6 +48,6 @@ struct F_< Nil, Needle, Predicate >
 
 int main()
 {
-	bool equals(IsNil< typename F_< typename Types, T, Equals >::type >::value);
+	bool equals(IsNil< typename F_< Types, T, Equals >::type >::value);
 	assert(equals);
 }

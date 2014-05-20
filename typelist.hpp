@@ -165,7 +165,10 @@ namespace Vlinder { namespace Meta {
 	template < typename TL, unsigned int index__, typename T >
 	struct Insert
 	{
-		typedef typename AppendList< typename Splice< TL, 0, index__ >::type, typename TypeList< T, typename Splice< TL, index__, Length< TL >::value - index__ >::type > >::type type;
+		typedef typename AppendList<
+			  typename Splice< TL, 0, index__ >::type
+			, TypeList< T, typename Splice< TL, index__, Length< TL >::value - index__ >::type >
+			>::type type;
 	};
 
 	template < typename TL, typename T >
@@ -203,7 +206,7 @@ namespace Vlinder { namespace Meta {
 	template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
 	struct Find
 	{
-		typedef typename Find_< typename Haystack, Needle, Predicate >::type type;
+		typedef typename Find_< Haystack, Needle, Predicate >::type type;
 	};
 }}
 
