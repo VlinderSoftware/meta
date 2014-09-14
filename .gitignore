@@ -1,0 +1,8 @@
+*.vcxproj
+*.filters
+*.dir
+CMakeFiles
+*.cmake
+*.tcl
+*.sln
+Debug
