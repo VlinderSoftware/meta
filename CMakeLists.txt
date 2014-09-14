@@ -12,11 +12,14 @@ foreach (test
 	equals01	equals02	equals03
 	isconvertible01 isconvertible02 isconvertible03
 	isconvertible04 isconvertible05 isconvertible06
+	isderivedfrom01 isderivedfrom02 isderivedfrom03
+	isderivedfrom04 isderivedfrom05
 	find01		find02
 	first_equals01
 	if01	if02	if03	if04
 	ifc01	ifc02	ifc03	ifc04
 	kpm01
+	removeconstvolatile01
 	)
 	add_executable(test_${test} tests/${test}.cpp)
 	add_test(test_${test} ${EXECUTABLE_OUTPUT_PATH}/test_${test})
