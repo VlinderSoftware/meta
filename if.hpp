@@ -12,25 +12,35 @@
 #include "nil.hpp"
 
 namespace Vlinder { namespace Meta {
+	namespace Details {
+		template < typename First, typename Second >
+		struct ResultIfTrue
+		{
+			typedef First type;
+		};
+		
+		template < typename First, typename Second >
+		struct ResultIfFalse
+		{
+			typedef Second type;
+		};
+	}
 	template < bool value, typename First, typename Second >
-	struct IfC_;
-	template < typename First, typename Second >
-	struct IfC_< true, First, Second >
+	struct IfC_
 	{
-		typedef First type;
+		typedef typename Details::ResultIfTrue< First, Second >::type type;
 	};
 	template < typename First, typename Second >
 	struct IfC_< false, First, Second >
 	{
-		typedef Second type;
+		typedef typename Details::ResultIfFalse< First, Second >::type type;
 	};
 
 
 	template < int value, typename First, typename Second >
 	struct IfC
 	{
-		typedef IfC_< value != 0, First, Second > intermediate;
-		typedef typename intermediate::type type;
+		typedef typename IfC_< value != 0, First, Second >::type type;
 	};
 	template < typename Pred, typename First, typename Second >
 	struct If : IfC< Pred::value, First, Second >
