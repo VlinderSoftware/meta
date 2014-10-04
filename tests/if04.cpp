@@ -48,6 +48,6 @@ struct F_< None, Needle, Predicate >
 
 int main()
 {
-	bool equals(IsNone< typename F_< typename Types, T, Equals >::type >::value);
+	bool equals(IsNone< typename F_< Types, T, Equals >::type >::value);
 	assert(equals);
 }

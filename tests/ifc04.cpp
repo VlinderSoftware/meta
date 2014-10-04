@@ -43,6 +43,6 @@ struct F_
 
 int main()
 {
-	bool equals(Equals< typename F_< typename Types, P, Equals >::type, P >::value);
+	bool equals(Equals< typename F_< Types, P, Equals >::type, P >::value);
 	assert(equals);
 }

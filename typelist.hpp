@@ -165,7 +165,21 @@ namespace Vlinder { namespace Meta {
 	template < typename TL, unsigned int index__, typename T >
 	struct Insert
 	{
-		typedef typename AppendList< typename Splice< TL, 0, index__ >::type, typename TypeList< T, typename Splice< TL, index__, Length< TL >::value - index__ >::type > >::type type;
+		typedef typename AppendList<
+			  typename Splice< 
+			  	  TL
+				, 0
+				, index__ 
+				>::type
+			, TypeList<
+				  T
+				, typename Splice<
+					  TL
+					, index__
+					, Length< TL >::value - index__
+					>::type
+				>
+			>::type type;
 	};
 
 	template < typename TL, typename T >
@@ -183,27 +197,52 @@ namespace Vlinder { namespace Meta {
 	template < typename TL1, template < class > class F >
 	struct Transform
 	{
-		typedef TypeList< typename F< typename TL1::head >::type, typename Transform< typename TL1::tail, F >::type > type;
+		typedef TypeList<
+			  typename F< typename TL1::head >::type
+			, typename Transform< typename TL1::tail, F >::type
+			> type;
 	};
-	template < typename Haystack, typename Needle, template < typename, typename > class Predicate, class Enable = void >
+	template <
+		  typename Haystack
+		, typename Needle
+		, template < typename, typename > class Predicate
+		, class Enable = void
+		>
 	struct Find_
 	{
 		typedef typename Find_< typename Haystack::tail, Needle, Predicate >::type type;
 	};
-	template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
+	template <
+		  typename Haystack
+		, typename Needle
+		, template < typename, typename > class Predicate
+		>
 	struct Find_< Haystack, Needle, Predicate, typename EnableIf< IsNone< Haystack > >::type >
 	{
 		typedef None type;
 	};
-	template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
-	struct Find_< Haystack, Needle, Predicate, typename EnableIf< typename Predicate< typename Haystack::head, Needle >::type >::type >
+	template <
+		  typename Haystack
+		, typename Needle
+		, template < typename, typename > class Predicate
+		>
+	struct Find_<
+		  Haystack
+		, Needle
+		, Predicate
+		, typename EnableIf< typename Predicate< typename Haystack::head, Needle >::type >::type 
+		>
 	{
 		typedef typename Haystack::head type;
 	};
 	template < typename Haystack, typename Needle, template < typename, typename > class Predicate >
 	struct Find
 	{
-		typedef typename Find_< typename Haystack, Needle, Predicate >::type type;
+		typedef typename Find_<
+			  Haystack
+			, Needle
+			, Predicate
+			>::type type;
 	};
 }}
 
