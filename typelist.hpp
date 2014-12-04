@@ -217,7 +217,7 @@ namespace Vlinder { namespace Meta {
 		, typename Needle
 		, template < typename, typename > class Predicate
 		>
-	struct Find_< Haystack, Needle, Predicate, typename EnableIf< IsNone< Haystack > >::type >
+	struct Find_< Haystack, Needle, Predicate, typename EnableIf< IsNil< Haystack > >::type >
 	{
 		typedef Nil type;
 	};
