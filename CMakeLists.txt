@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 project(meta)
 
+if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 enable_testing()
 include(Dart)
 
@@ -24,6 +25,7 @@ foreach (test
 	add_executable(test_${test} tests/${test}.cpp)
 	add_test(test_${test} ${EXECUTABLE_OUTPUT_PATH}/test_${test})
 endforeach(test)
+endif()
 
 # add a target to generate API documentation with Doxygen
 #find_package(Doxygen)
