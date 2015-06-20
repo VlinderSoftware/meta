@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 2.6)
 project(meta)
 
+if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 enable_testing()
-include(Dart)
+include(CTest)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR})
