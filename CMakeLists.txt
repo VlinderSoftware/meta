@@ -8,7 +8,6 @@ include(CTest)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR})
 
-if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
 foreach (test
 	meta01
 	equals01	equals02	equals03
