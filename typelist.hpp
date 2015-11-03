@@ -31,6 +31,31 @@ namespace Vlinder { namespace Meta {
 		typedef Tail tail;
 	};
 
+	template < typename TL >
+	struct Head;
+	template < >
+	struct Head< Nil >
+	{
+		typedef Nil type;
+	};
+	template < typename TL >
+	struct Head
+	{
+		typedef typename TL::head type;
+	};
+	template < typename TL >
+	struct Tail;
+	template < >
+	struct Tail< Nil >
+	{
+		typedef Nil type;
+	};
+	template < typename TL >
+	struct Tail
+	{
+		typedef typename TL::tail type;
+	};
+
 	template <
 		  typename  T1       , typename  T2 = Nil, typename  T3 = Nil, typename  T4 = Nil
 		, typename  T5 = Nil, typename  T6 = Nil, typename  T7 = Nil, typename  T8 = Nil
@@ -244,6 +269,25 @@ namespace Vlinder { namespace Meta {
 			, Predicate
 			>::type type;
 	};
+
+
+	template < typename Candidate, typename Haystack, typename Needle, unsigned int index >
+	struct IndexOf_;
+	template < typename Haystack, typename Needle, unsigned int index >
+	struct IndexOf_< Needle, Haystack, Needle, index >
+	{
+		enum { value = index };
+	};
+	template < typename Candidate, typename Haystack, typename Needle, unsigned int index >
+	struct IndexOf_ : IndexOf_< typename Head< Haystack >::type, typename Tail< Haystack >::type, Needle, index + 1 >
+	{};
+
+	template < typename Haystack, typename Needle >
+	struct IndexOf
+	{
+		enum { value = IndexOf_< typename Head< Haystack >::type, typename Tail< Haystack >::type, Needle, 0 >::value };
+	};
+
 }}
 
 #endif
