@@ -26,3 +26,13 @@
 *.exe
 *.out
 *.app
+*.vcxproj
+*.filters
+*.dir
+CMakeFiles
+*.cmake
+*.tcl
+*.sln
+Debug
+*~
+
